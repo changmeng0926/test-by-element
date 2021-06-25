@@ -6,7 +6,7 @@ export const treeList = [
     father_id: 0,
     child: [
       {
-        label: '水果',
+        label: '水果1',
         id: 100,
         type: 2,
         father_id: 1,
@@ -32,7 +32,7 @@ export const treeList = [
         ]
       },
       {
-        label: '蔬菜',
+        label: '蔬菜1',
         id: 101,
         type: 2,
         father_id: 1,
@@ -66,7 +66,7 @@ export const treeList = [
     father_id: 0,
     child: [
       {
-        label: '水果',
+        label: '水果2',
         id: 120,
         type: 2,
         father_id: 2,
@@ -92,7 +92,7 @@ export const treeList = [
         ]
       },
       {
-        label: '蔬菜',
+        label: '蔬菜2',
         id: 121,
         type: 2,
         father_id: 2,
@@ -127,7 +127,7 @@ export const treeList = [
     father_id: 0,
     child: [
       {
-        label: '水果',
+        label: '水果3',
         id: 140,
         type: 2,
         father_id: 3,
@@ -153,7 +153,7 @@ export const treeList = [
         ]
       },
       {
-        label: '蔬菜',
+        label: '蔬菜3',
         id: 141,
         type: 2,
         father_id: 3,
@@ -193,7 +193,7 @@ export const treeList = [
     father_id: 0,
     child: [
       {
-        label: '水果',
+        label: '水果4',
         id: 160,
         type: 2,
         father_id: 4,
@@ -219,7 +219,7 @@ export const treeList = [
         ]
       },
       {
-        label: '蔬菜',
+        label: '蔬菜4',
         id: 161,
         type: 2,
         father_id: 4,
@@ -253,7 +253,7 @@ export const treeList = [
     father_id: 5,
     child: [
       {
-        label: '水果',
+        label: '水果5',
         id: 180,
         type: 2,
         father_id: 1,
@@ -279,7 +279,7 @@ export const treeList = [
         ]
       },
       {
-        label: '蔬菜',
+        label: '蔬菜5',
         id: 181,
         type: 2,
         father_id: 5,
@@ -307,7 +307,7 @@ export const treeList = [
     father_id: 0,
     child: [
       {
-        label: '水果',
+        label: '水果6',
         id: 200,
         type: 2,
         father_id: 6,
@@ -327,7 +327,7 @@ export const treeList = [
         ]
       },
       {
-        label: '蔬菜',
+        label: '蔬菜6',
         id: 201,
         type: 2,
         father_id: 6,
@@ -361,7 +361,7 @@ export const treeList = [
     father_id: 0,
     child: [
       {
-        label: '水果',
+        label: '水果7',
         id: 220,
         type: 2,
         father_id: 7,
@@ -387,7 +387,7 @@ export const treeList = [
         ]
       },
       {
-        label: '蔬菜',
+        label: '蔬菜7',
         id: 221,
         type: 2,
         father_id: 7,

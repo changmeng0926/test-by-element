@@ -1,14 +1,14 @@
 <template>
   <div class="layout-content">
     <div class="header">
-      <el-menu :default-active="activeIndex2"
+      <el-menu :default-active="$route.path"
                class="el-menu-demo"
                mode="horizontal"
                @select="handleSelect"
                background-color="#545c64"
                text-color="#fff"
                active-text-color="#ffd04b">
-        <el-menu-item index="home">home</el-menu-item>
+        <el-menu-item index="/home">home</el-menu-item>
 
         <!-- <el-submenu index="2">
           <template slot="title">我的工作台</template>
@@ -46,13 +46,17 @@ export default {
   name: 'Layout',
   data () {
     return {
-      activeIndex2: '1'
-
+      activeIndex: '/home'
     }
   },
   watch: {},
   computed: {},
-  created () { },
+  created () {
+    console.log(this.$route);
+    const str = this.$route.path.split('/')[1]
+    this.activeIndex = str
+    console.log('this.activeIndex', this.activeIndex);
+  },
   mounted () { },
   methods: {
     handleSelect (key, keyPath) {
