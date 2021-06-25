@@ -1,16 +1,16 @@
 <template>
   <div class="virtual-list-content">
-    <el-tabs type="border-card"
-             @tab-click="tabChange">
-      <el-tab-pane>
+    <el-tabs type="border-card" @tab-click="tabChange">
+      <el-tab-pane label="base">
         <span slot="label">
           <!-- <i class="el-icon-date"></i> -->
           基础用法
         </span>
-        基础用法
+        <BaseList v-if="isBase" />
       </el-tab-pane>
-      <el-tab-pane label="与el-select结合">
-        <Select />
+      <el-tab-pane label="select">
+        <span slot="label">与el-select结合</span>
+        <Select v-if="isSelect" />
       </el-tab-pane>
       <el-tab-pane label="去掉高度限制">去掉高度限制</el-tab-pane>
     </el-tabs>
@@ -19,11 +19,15 @@
 
 <script>
 import Select from "./component/Select.vue";
+import BaseList from "./component/BaseList.vue";
 export default {
   name: 'VirtualList',
-  components: { Select },
+  components: { Select, BaseList },
   data () {
-    return {}
+    return {
+      isBase: true,
+      isSelect: true,
+    }
   },
   watch: {},
   computed: {},
@@ -31,7 +35,13 @@ export default {
   mounted () { },
   methods: {
     tabChange (v, e) {
-      console.log(v, e);
+      if (v.label === 'base') {
+        this.isBase = true
+        this.isSelect = false
+      } else if (v.label === 'select') {
+        this.isBase = false
+        this.isSelect = true
+      }
     }
   }
 }
@@ -43,6 +53,10 @@ export default {
   border: none;
 }
 /deep/.el-tabs__content {
+  padding: 0;
   height: calc(100% - 39px);
+  .el-tab-pane {
+    height: 100%;
+  }
 }
 </style>

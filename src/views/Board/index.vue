@@ -1,37 +1,35 @@
 <template>
   <div class="board-content">
-    <!-- <ForceMap /> -->
-    <el-tabs type="border-card"
-             @tab-click="tabChange">
-      <el-tab-pane label="barCharts">
+    <el-tabs v-model="activeName" type="border-card" @tab-click="tabChange">
+      <el-tab-pane name="barCharts" label="barCharts">
         <span slot="label">
           <i class="iconfont icon-tubiaozhuzhuangtu"></i>
           柱状图
         </span>
         <BarCharts v-if="isBarCharts" />
       </el-tab-pane>
-      <el-tab-pane>
+      <el-tab-pane name>
         <span slot="label">
           <i class="iconfont icon-tubiaoliandong"></i>
           图表联动
         </span>
         图表联动
       </el-tab-pane>
-      <el-tab-pane>
+      <el-tab-pane name>
         <span slot="label">
           <i class="iconfont icon-gantetu5"></i>
           甘特图
         </span>
         甘特图
       </el-tab-pane>
-      <el-tab-pane>
+      <el-tab-pane name>
         <span slot="label">
           <i class="iconfont icon-liuchengtu"></i>
           流程图
         </span>
         流程图
       </el-tab-pane>
-      <el-tab-pane label="forceMap">
+      <el-tab-pane name="forceMap" label="forceMap">
         <span slot="label">
           <i class="iconfont icon-guanxitu1"></i>
           关系图
@@ -50,8 +48,9 @@ export default {
   components: { ForceMap, BarCharts },
   data () {
     return {
+      activeName: 'barCharts',
       isForceMap: false,
-      isBarCharts: false,
+      isBarCharts: true,
     }
   },
   watch: {},
