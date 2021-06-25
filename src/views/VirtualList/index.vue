@@ -1,18 +1,18 @@
 <template>
   <div class="virtual-list-content">
-    <el-tabs type="border-card" @tab-click="tabChange">
-      <el-tab-pane label="base">
+    <el-tabs v-model="activeName" type="border-card" @tab-click="tabChange">
+      <el-tab-pane label="base" name="base">
         <span slot="label">
           <!-- <i class="el-icon-date"></i> -->
           基础用法
         </span>
         <BaseList v-if="isBase" />
       </el-tab-pane>
-      <el-tab-pane label="select">
+      <el-tab-pane label="select" name="select">
         <span slot="label">与el-select结合</span>
         <Select v-if="isSelect" />
       </el-tab-pane>
-      <el-tab-pane label="去掉高度限制">去掉高度限制</el-tab-pane>
+      <el-tab-pane label="去掉高度限制" name>去掉高度限制</el-tab-pane>
     </el-tabs>
   </div>
 </template>
@@ -25,6 +25,7 @@ export default {
   components: { Select, BaseList },
   data () {
     return {
+      activeName: 'base',
       isBase: true,
       isSelect: true,
     }
