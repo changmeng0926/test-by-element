@@ -12,7 +12,9 @@
         <span slot="label">与el-select结合</span>
         <Select v-if="isSelect" />
       </el-tab-pane>
-      <el-tab-pane label="去掉高度限制" name>去掉高度限制</el-tab-pane>
+      <el-tab-pane label="去掉高度限制" name="unfixed">
+        <UnfixedHeight v-if="isUnfixed" />
+      </el-tab-pane>
     </el-tabs>
   </div>
 </template>
@@ -20,14 +22,16 @@
 <script>
 import Select from "./component/Select.vue";
 import BaseList from "./component/BaseList.vue";
+import UnfixedHeight from "./component/UnfixedHeight.vue";
 export default {
   name: 'VirtualList',
-  components: { Select, BaseList },
+  components: { Select, BaseList, UnfixedHeight },
   data () {
     return {
       activeName: 'base',
       isBase: true,
-      isSelect: true,
+      isSelect: false,
+      isUnfixed: false,
     }
   },
   watch: {},
@@ -36,12 +40,18 @@ export default {
   mounted () { },
   methods: {
     tabChange (v, e) {
-      if (v.label === 'base') {
+      if (v.name === 'base') {
         this.isBase = true
         this.isSelect = false
-      } else if (v.label === 'select') {
+        this.isUnfixed = false
+      } else if (v.name === 'select') {
         this.isBase = false
         this.isSelect = true
+        this.isUnfixed = false
+      } else if (v.name === 'unfixed') {
+        this.isBase = false
+        this.isSelect = false
+        this.isUnfixed = true
       }
     }
   }
