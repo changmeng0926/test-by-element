@@ -8,8 +8,10 @@
       <div class="scroll-content" :style="{height:contentHeight}">
         <div ref="visible">
           <div v-for="i in visibleData" :key="i.id" class="list-item">
-            <span class="item-label">{{i.label || i.name}}</span>
-            <span>{{i.value}}</span>
+            <div class="item-label">{{i.label || i.name}}</div>
+            <div class="item-value">
+              <span v-for="v in i.value" :key="v">{{v}}</span>
+            </div>
           </div>
         </div>
       </div>
@@ -34,6 +36,9 @@ export default {
       return this.itemHeight * this.listData.length + 'px'
     }
   },
+  updated () {
+    console.log('xxxx');
+  },
   mounted () {
     this.getListData()
     this.updateVisibleData(0)
@@ -49,6 +54,7 @@ export default {
       const start = Math.floor(scrollTop / this.itemHeight)
       const end = start + visbleCount
       this.visibleData = this.listData.slice(start, end)
+      // console.log('this.visibleData', this.visibleData, scrollTop)
       let H = start * this.itemHeight
       this.$refs.visible.style.webkitTransform = `translate3d(0, ${H}px,0)`
     },
@@ -61,7 +67,7 @@ export default {
           id: i,
           name: i % 2 === 0 ? `${name}_i` : '',
           label: `${label}_${i}`,
-          value: `${value}_${i}`
+          value: i % 5 === 0 ? [`${value}_${i}`, `${value}_${i}_copy`,] : i % 3 === 0 ? [`${value}_${i}`, `${value}_${i}_copy1`, `${value}_${i}_copy2`] : i % 4 === 0 ? [`${value}_${i}`, `${value}_${i}_copy1`, `${value}_${i}_copy2`, `${value}_${i}_copy3`] : [`${value}_${i}`]
         }
         this.listData.push(obj)
       }
@@ -95,13 +101,20 @@ export default {
   .list-item {
     display: flex;
     line-height: 32px;
-    span {
+    div {
       flex: 1;
       text-indent: 24px;
     }
   }
+  .list-item:nth-child(2n) {
+    background: rgba(200, 200, 200, 0.3);
+  }
   .item-label {
     border-right: 1px solid rgba(0, 0, 0, 0.3);
+  }
+  .item-value {
+    display: flex;
+    flex-direction: column;
   }
 }
 </style>

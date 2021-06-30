@@ -6,6 +6,132 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "554482",
+      "name": "数据流通",
+      "font_class": "iconset0448",
+      "unicode": "e747",
+      "unicode_decimal": 59207
+    },
+    {
+      "icon_id": "2001092",
+      "name": "数据流通",
+      "font_class": "shujuliutong",
+      "unicode": "e693",
+      "unicode_decimal": 59027
+    },
+    {
+      "icon_id": "17475420",
+      "name": "数据流",
+      "font_class": "shujuliu",
+      "unicode": "e881",
+      "unicode_decimal": 59521
+    },
+    {
+      "icon_id": "20315144",
+      "name": "数据流转",
+      "font_class": "shujuliuzhuan",
+      "unicode": "e635",
+      "unicode_decimal": 58933
+    },
+    {
+      "icon_id": "22353384",
+      "name": "32_sjjc_C_BI_数据流任务_1",
+      "font_class": "32_sjjc_C_BI_shujuliurenwu_1",
+      "unicode": "e722",
+      "unicode_decimal": 59170
+    },
+    {
+      "icon_id": "152838",
+      "name": "任务",
+      "font_class": "xiaolvdashitubiao33312",
+      "unicode": "e6d7",
+      "unicode_decimal": 59095
+    },
+    {
+      "icon_id": "165767",
+      "name": "任务",
+      "font_class": "renwu",
+      "unicode": "e61e",
+      "unicode_decimal": 58910
+    },
+    {
+      "icon_id": "7173471",
+      "name": "任务",
+      "font_class": "renwu1",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "9358800",
+      "name": "任务",
+      "font_class": "renwu2",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "18989220",
+      "name": "任务",
+      "font_class": "renwu3",
+      "unicode": "e698",
+      "unicode_decimal": 59032
+    },
+    {
+      "icon_id": "20026082",
+      "name": "任务",
+      "font_class": "renwu4",
+      "unicode": "e705",
+      "unicode_decimal": 59141
+    },
+    {
+      "icon_id": "22363103",
+      "name": "任务",
+      "font_class": "renwu5",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    },
+    {
+      "icon_id": "2443653",
+      "name": "减 copy@3x",
+      "font_class": "jiancopyx",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "4175677",
+      "name": "减",
+      "font_class": "jian",
+      "unicode": "e727",
+      "unicode_decimal": 59175
+    },
+    {
+      "icon_id": "9047415",
+      "name": "加",
+      "font_class": "jia",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "9851045",
+      "name": "加",
+      "font_class": "jia1",
+      "unicode": "e697",
+      "unicode_decimal": 59031
+    },
+    {
+      "icon_id": "10413651",
+      "name": "减",
+      "font_class": "jian1",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "22390451",
+      "name": "减",
+      "font_class": "jian2",
+      "unicode": "e65e",
+      "unicode_decimal": 58974
+    },
+    {
       "icon_id": "6357327",
       "name": "购物",
       "font_class": "gouwuche",

@@ -1,21 +1,17 @@
 <template>
-  <el-select v-model="inputValue"
-             placeholder="请选择"
-             :popper-append-to-body="false"
-             v-selectScroll="selectScroll"
-             size="small"
-             class="select-virtual">
-    <div class="select-option"
-         ref="content"
-         :style="{height: contentHeight}">
-      <div class="virtuaList-wrapper"
-           ref="wrapper">
-        <el-option v-for="item in visibleData"
-                   :key="item"
-                   :label="item"
-                   :value="item">
+  <el-select
+    v-model="inputValue"
+    placeholder="请选择"
+    :popper-append-to-body="false"
+    v-selectScroll="selectScroll"
+    size="small"
+    class="select-virtual"
+  >
+    <div class="select-option" ref="content" :style="{height: contentHeight}">
+      <div class="virtuaList-wrapper" ref="wrapper">
+        <el-option v-for="item in visibleData" :key="item" :label="item" :value="item">
           <!-- <slot ref="slot"
-                :item="item"></slot> -->
+          :item="item"></slot>-->
         </el-option>
       </div>
     </div>
@@ -24,7 +20,7 @@
 
 <script>
 export default {
-  name: 'Select',
+  name: 'glSelect',
   data () {
     return {
       inputValue: '',

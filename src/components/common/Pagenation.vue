@@ -1,19 +1,19 @@
 <template>
-  <el-pagenation background
-                 @size-change="handleSizeChange"
-                 @current-change="handleCurrentChange"
-                 :current-page="value.current"
-                 :page-sizes="value.sizes"
-                 :page-size="value.size"
-                 :totle="value.totle"
-                 layout="total, sizes, prev, pager, next, jumper">
-
-  </el-pagenation>
+  <el-pagenation
+    background
+    @size-change="handleSizeChange"
+    @current-change="handleCurrentChange"
+    :current-page="value.current"
+    :page-sizes="value.sizes"
+    :page-size="value.size"
+    :totle="value.totle"
+    layout="total, sizes, prev, pager, next, jumper"
+  ></el-pagenation>
 </template>
 
 <script>
 export default {
-  name: 'Pagenation',
+  name: 'glPagenation',
   props: {
     value: {
       type: Object,

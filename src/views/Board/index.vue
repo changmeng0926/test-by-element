@@ -22,12 +22,12 @@
         </span>
         甘特图
       </el-tab-pane>
-      <el-tab-pane name>
+      <el-tab-pane name="flowChart" label="flowChart">
         <span slot="label">
           <i class="iconfont icon-liuchengtu"></i>
           流程图
         </span>
-        流程图
+        <DataFlow v-if="isFlowChart" />
       </el-tab-pane>
       <el-tab-pane name="forceMap" label="forceMap">
         <span slot="label">
@@ -43,14 +43,16 @@
 <script>
 import ForceMap from "./Charts/ForceMap.vue";
 import BarCharts from "./Charts/BarCharts.vue";
+import DataFlow from "./DataFlow.vue";
 export default {
   name: 'Board',
-  components: { ForceMap, BarCharts },
+  components: { ForceMap, BarCharts, DataFlow },
   data () {
     return {
-      activeName: 'barCharts',
+      activeName: 'flowChart',
       isForceMap: false,
-      isBarCharts: true,
+      isBarCharts: false,
+      isFlowChart: true,
     }
   },
   watch: {},
@@ -63,11 +65,19 @@ export default {
       if (v.label === 'forceMap') {
         this.isForceMap = true
         this.isBarCharts = false
+        this.isFlowChart = false
       } else if (v.label === 'barCharts') {
+        this.isForceMap = false
         this.isBarCharts = true
+        this.isFlowChart = false
+      } else if (v.label === 'flowChart') {
+        this.isForceMap = false
+        this.isBarCharts = false
+        this.isFlowChart = true
       } else {
         this.isForceMap = false
         this.isBarCharts = false
+        this.isFlowChart = false
       }
     }
   }
@@ -85,5 +95,8 @@ export default {
 /deep/.el-tab-pane {
   width: 100%;
   height: 100%;
+}
+/deep/.el-tabs__content {
+  padding: 0;
 }
 </style>
