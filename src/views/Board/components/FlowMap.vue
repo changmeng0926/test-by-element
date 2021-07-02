@@ -1,5 +1,5 @@
 <template>
-  <div id="graphContainer"></div>
+  <div id="graphContainer" class="graphContainer"></div>
 </template>
 
 <script>
@@ -13,7 +13,8 @@ export default {
     return {}
   },
   watch: {},
-  computed: {},
+  computed: {
+  },
   mounted () {
     if (!mxClient.isBrowserSupported()) {
       // 判断是否支持mxgraph
@@ -45,4 +46,8 @@ export default {
 </script>
 
 <style lang='less' scoped>
+.graphContainer {
+  width: 100%;
+  height: 100%;
+}
 </style>

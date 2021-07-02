@@ -3,15 +3,18 @@
     <el-aside width="200px">
       <SideBar />
     </el-aside>
-    <el-main>Main</el-main>
+    <el-main>
+      <FlowMap />
+    </el-main>
   </el-container>
 </template>
 
 <script>
 import SideBar from "./components/SideBar.vue";
+import FlowMap from "./components/FlowMap.vue";
 export default {
   name: 'DataFlow',
-  components: { SideBar },
+  components: { SideBar, FlowMap },
   props: {},
   data () {
     return {}
