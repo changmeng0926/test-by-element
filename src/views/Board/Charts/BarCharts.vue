@@ -1,6 +1,5 @@
 <template>
-  <div id="BarCharts"
-       class="bar-charts"></div>
+  <div id="BarChart" class="bar-chart"></div>
 </template>
 
 <script>
@@ -27,7 +26,7 @@ export default {
   },
   methods: {
     initBar () {
-      var el = document.getElementById('BarCharts')
+      var el = document.getElementById('BarChart')
       this.myChart = this.$echarts.init(el)
       this.option && this.myChart.setOption(this.option)
     },
@@ -139,7 +138,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.bar-charts {
+.bar-chart {
   width: 100%;
   height: 100%;
 }

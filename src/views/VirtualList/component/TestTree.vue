@@ -5,7 +5,7 @@
         <div class="top"></div>
       </div>
       <div class="tree-list" :class="{'trees-list' : i.child}">
-        <span draggable="true" @click="openModul(i)" class="tree-item">{{i.name}}</span>
+        <span draggable="true" @click="openModul(i, $event)" class="tree-item">{{i.name}}</span>
         <i
           v-if="i.child"
           @click="extend(i)"
@@ -18,6 +18,7 @@
         :class="{'tree-hide-child' : !i.isShow}"
         class="tree-child"
         :list="i.child"
+        @showDialog="showDialog"
       />
     </div>
   </div>
@@ -41,8 +42,12 @@ export default {
   computed: {},
   mounted () { },
   methods: {
-    openModul (i) {
-      console.log('i', i);
+    openModul (i, e) {
+      console.log('i', i, 'e', e);
+      this.$emit('showDialog', e, i)
+    },
+    showDialog (e, i) {
+      this.$emit('showDialog', e, i)
     },
     extend (i) {
       i.isShow = !i.isShow
@@ -132,7 +137,7 @@ export default {
       left: 0px;
       width: 1px;
       height: 50%;
-      z-index: 9999;
+      z-index: 80;
     }
   }
 }
@@ -149,7 +154,7 @@ export default {
       left: 0px;
       width: 1px;
       height: 50%;
-      z-index: 9999;
+      z-index: 80;
     }
   }
 }
@@ -162,7 +167,7 @@ export default {
     left: 0px;
     width: 1px;
     height: 50%;
-    z-index: 999;
+    z-index: 80;
   }
 }
 /deep/.tree.trees:first-child {
@@ -174,7 +179,7 @@ export default {
     left: 0px;
     width: 1px;
     height: 50%;
-    z-index: 999;
+    z-index: 80;
   }
 }
 .trees-list:before {
@@ -193,9 +198,11 @@ i.icon-jia {
   top: 50%;
   transform: translate(33px, -50%);
   cursor: pointer;
-  z-index: 100000;
+  z-index: 80;
 }
 .tree-hide-child {
   display: none;
+}
+.item-dialog {
 }
 </style>

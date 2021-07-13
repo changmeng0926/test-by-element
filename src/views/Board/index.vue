@@ -8,12 +8,12 @@
         </span>
         <BarCharts v-if="isBarCharts" />
       </el-tab-pane>
-      <el-tab-pane name>
+      <el-tab-pane name="chartTable" label="chartTable">
         <span slot="label">
           <i class="iconfont icon-tubiaoliandong"></i>
           图表联动
         </span>
-        图表联动
+        <ChartTableRelev v-if="isChartTable" />
       </el-tab-pane>
       <el-tab-pane name>
         <span slot="label">
@@ -44,15 +44,17 @@
 import ForceMap from "./Charts/ForceMap.vue";
 import BarCharts from "./Charts/BarCharts.vue";
 import DataFlow from "./DataFlow.vue";
+import ChartTableRelev from "./ChartTableRelev.vue";
 export default {
   name: 'Board',
-  components: { ForceMap, BarCharts, DataFlow },
+  components: { ForceMap, BarCharts, DataFlow, ChartTableRelev },
   data () {
     return {
-      activeName: 'flowChart',
+      activeName: 'chartTable',
       isForceMap: false,
       isBarCharts: false,
-      isFlowChart: true,
+      isFlowChart: false,
+      isChartTable: true,
     }
   },
   watch: {},
@@ -66,18 +68,27 @@ export default {
         this.isForceMap = true
         this.isBarCharts = false
         this.isFlowChart = false
+        this.isChartTable = false
       } else if (v.label === 'barCharts') {
         this.isForceMap = false
         this.isBarCharts = true
         this.isFlowChart = false
+        this.isChartTable = false
       } else if (v.label === 'flowChart') {
         this.isForceMap = false
         this.isBarCharts = false
         this.isFlowChart = true
+        this.isChartTable = false
+      } else if (v.label === 'chartTable') {
+        this.isForceMap = false
+        this.isBarCharts = false
+        this.isFlowChart = false
+        this.isChartTable = true
       } else {
         this.isForceMap = false
         this.isBarCharts = false
         this.isFlowChart = false
+        this.isChartTable = false
       }
     }
   }
@@ -98,5 +109,8 @@ export default {
 }
 /deep/.el-tabs__content {
   padding: 0;
+}
+#pane-chartTable {
+  overflow-y: scroll;
 }
 </style>

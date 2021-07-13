@@ -11,7 +11,23 @@
       </div>
     </div>
     <div class="right">
-      <TestTree :list="tesstData" />
+      <TestTree :list="tesstData" @showDialog="showDialog" />
+
+      <el-dialog
+        title="提示"
+        :modal="false"
+        :visible.sync="dialogVisible"
+        width="30%"
+        :before-close="close"
+        custom-class="item-dialog"
+        ref="itemDialog"
+      >
+        <span>这是一段信息</span>
+        <span slot="footer" class="dialog-footer">
+          <el-button @click="dialogVisible = false">取 消</el-button>
+          <el-button type="primary" @click="close">确 定</el-button>
+        </span>
+      </el-dialog>
     </div>
   </div>
 </template>
@@ -25,6 +41,7 @@ export default {
   props: {},
   data () {
     return {
+      dialogVisible: false,
       tesstData: [],
       list: [
         {
@@ -45,6 +62,23 @@ export default {
     console.log('this.tesstData', this.tesstData);
   },
   methods: {
+    close () {
+      this.dialogVisible = false
+    },
+    showDialog (e, i) {
+      console.log(e, i, 'x');
+      const el = this.$refs.itemDialog
+      const { x, y } = e
+      const body_el = document.getElementsByTagName('body')[0]
+      const { clienWidth, clienHeight } = body_el
+      if (x + 350 > clienWidth) {
+        el.$el.firstChild.style.marginLeft = x - 350 + 'px'
+      } else {
+        el.$el.firstChild.style.marginLeft = x + 50 - + 'px'
+      }
+      el.$el.firstChild.style.marginTop = y + 'px'
+      this.dialogVisible = true
+    },
     initData (list) {
       list.forEach(i => {
         i.isShow = true

@@ -60,7 +60,7 @@ export default {
     this.tasks = deepCopy(taskList)
     this.flows = deepCopy(flowList)
     this.flows[0].isSelect = true
-    this.$store.commit('SET_CURR_FLOW', this.flows[0])
+    // this.$store.commit('SET_CURR_FLOW', this.flows[0])
     this.prevIndex = 0
   },
   methods: {
@@ -87,7 +87,7 @@ export default {
       this.flows[this.prevIndex].isSelect = false
       this.prevIndex = index
       f.isSelect = true
-      this.$store.commit('SET_CURR_FLOW', f)
+      // this.$store.commit('SET_CURR_FLOW', f)
     }
   },
 }
