@@ -103,28 +103,28 @@ export default {
                 0, 1, 0, 0, [
                 {
                   offset: 0,
-                  // color: 'rgb(123,141,248,0.8)'
-                  color: 'deepskyblue'
+                  color: 'rgb(123,141,248,0.8)'
+                  // color: 'deepskyblue'
                 },
                 {
                   offset: 0.25,
-                  // color: 'rgb(123,141,248,0.7)'
-                  color: 'skyblue'
+                  color: 'rgb(123,141,248,0.7)'
+                  // color: 'skyblue'
                 },
                 {
                   offset: 0.5,
-                  // color: 'rgb(123,141,248,0.6)'
-                  color: 'orangered'
+                  color: 'rgb(123,141,248,0.6)'
+                  // color: 'orangered'
                 },
                 {
                   offset: 0.75,
-                  // color: 'rgb(123,141,248,0.5)'
-                  color: 'orange'
+                  color: 'rgb(123,141,248,0.5)'
+                  // color: 'orange'
                 },
                 {
                   offset: 1,
-                  // color: 'rgb(69,84,238,0.4)'
-                  color: 'gold'
+                  color: 'rgb(69,84,238,0.4)'
+                  // color: 'gold'
                 }
               ]
               )
@@ -140,6 +140,6 @@ export default {
 <style lang="less" scoped>
 .bar-chart {
   width: 100%;
-  height: 100%;
+  height: 500px;
 }
 </style>

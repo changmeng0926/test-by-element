@@ -109,6 +109,6 @@ export default {
 .line-chart {
   width: 100%;
   height: 400px;
-  padding: 24px;
+  padding: 24px 24px 0;
 }
 </style>
