@@ -6,6 +6,34 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "22734805",
+      "name": "上游",
+      "font_class": "shangyou",
+      "unicode": "e645",
+      "unicode_decimal": 58949
+    },
+    {
+      "icon_id": "22734806",
+      "name": "中游",
+      "font_class": "zhongyou",
+      "unicode": "e646",
+      "unicode_decimal": 58950
+    },
+    {
+      "icon_id": "22734807",
+      "name": "应用领域",
+      "font_class": "yingyonglingyu",
+      "unicode": "e647",
+      "unicode_decimal": 58951
+    },
+    {
+      "icon_id": "22740167",
+      "name": "下游",
+      "font_class": "xiayou",
+      "unicode": "e648",
+      "unicode_decimal": 58952
+    },
+    {
       "icon_id": "554482",
       "name": "数据流通",
       "font_class": "iconset0448",

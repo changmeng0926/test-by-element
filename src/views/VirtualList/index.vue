@@ -85,6 +85,8 @@ export default {
 }
 /deep/.el-tab-pane {
   padding: 16px !important;
+}
+#pane-test {
   overflow: scroll;
 }
 </style>

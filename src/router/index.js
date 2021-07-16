@@ -2,19 +2,20 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import Layout from "@/layout";
+import Layout from '@/layout'
 
 // 清除同路由点击报错
 const originalPush = VueRouter.prototype.push
-	VueRouter.prototype.push = function push(location) {
-	   return originalPush.call(this, location).catch(err => err)
-	}
+VueRouter.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch((err) => err)
+}
 
 Vue.use(VueRouter)
 
 const router = new VueRouter({
   mode: 'history',
-  base: process.env.BASE_URL,
+  // base: process.env.BASE_URL,
+  base: process.env.VUE_APP_BASEURL,
   scrollBehavior: () => ({
     y: 0,
   }),
@@ -33,10 +34,10 @@ const router = new VueRouter({
           meta: {
             title: 'home',
             icon: 'home',
-            affix: true
-          }
-        }
-      ]
+            affix: true,
+          },
+        },
+      ],
     },
     {
       path: '/',
@@ -51,10 +52,10 @@ const router = new VueRouter({
           meta: {
             title: 'board',
             icon: 'board',
-            affix: true
-          }
-        }
-      ]
+            affix: true,
+          },
+        },
+      ],
     },
     {
       path: '/',
@@ -69,10 +70,10 @@ const router = new VueRouter({
           meta: {
             title: 'permission',
             icon: 'permission',
-            affix: true
-          }
-        }
-      ]
+            affix: true,
+          },
+        },
+      ],
     },
     {
       path: '/',
@@ -87,10 +88,10 @@ const router = new VueRouter({
           meta: {
             title: 'notes',
             icon: 'notes',
-            affix: true
-          }
-        }
-      ]
+            affix: true,
+          },
+        },
+      ],
     },
     {
       path: '/',
@@ -105,10 +106,10 @@ const router = new VueRouter({
           meta: {
             title: 'virtualList',
             icon: 'virtualList',
-            affix: true
-          }
-        }
-      ]
+            affix: true,
+          },
+        },
+      ],
     },
     {
       path: '/',
@@ -123,10 +124,10 @@ const router = new VueRouter({
           meta: {
             title: 'recursion',
             icon: 'recursion',
-            affix: true
-          }
-        }
-      ]
+            affix: true,
+          },
+        },
+      ],
     },
     {
       path: '/',
@@ -141,10 +142,10 @@ const router = new VueRouter({
           meta: {
             title: 'dragLayout',
             icon: 'dragLayout',
-            affix: true
-          }
-        }
-      ]
+            affix: true,
+          },
+        },
+      ],
     },
     {
       path: '/',
@@ -159,11 +160,11 @@ const router = new VueRouter({
           meta: {
             title: 'shoppingTrolley',
             icon: 'shoppingTrolley',
-            affix: true
-          }
-        }
-      ]
+            affix: true,
+          },
+        },
+      ],
     },
-  ]
+  ],
 })
 export default router

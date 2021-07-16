@@ -1,7 +1,5 @@
 <template>
-  <div>
-    Permission
-  </div>
+  <div>Permission</div>
 </template>
 
 <script>
