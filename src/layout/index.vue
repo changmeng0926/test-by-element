@@ -32,6 +32,7 @@
           <template slot="title">components</template>
           <el-menu-item index="/VirtualList">虚拟列表</el-menu-item>
           <el-menu-item index="/Recursion">递归组件</el-menu-item>
+          <el-menu-item index="/Calendar">日历</el-menu-item>
           <el-menu-item index="/DragLayout">拖拽布局</el-menu-item>
           <el-menu-item index="/ShoppingTrolley">购物车</el-menu-item>
         </el-submenu>

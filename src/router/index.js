@@ -165,6 +165,24 @@ const router = new VueRouter({
         },
       ],
     },
+    {
+      path: '/',
+      component: Layout,
+      redirect: '/Calendar',
+      hidden: true,
+      children: [
+        {
+          path: 'calendar',
+          component: () => import('@/views/Calendar'),
+          name: 'Calendar',
+          meta: {
+            title: 'calendar',
+            icon: 'calendar',
+            affix: true,
+          },
+        },
+      ],
+    },
   ],
 })
 export default router
