@@ -1,10 +1,38 @@
 {
   "id": "1523948",
-  "name": "no name",
+  "name": "test-by-element",
   "font_family": "iconfont",
   "css_prefix_text": "icon-",
   "description": "",
   "glyphs": [
+    {
+      "icon_id": "10527284",
+      "name": "展开",
+      "font_class": "spread-line",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    },
+    {
+      "icon_id": "10667762",
+      "name": "展开",
+      "font_class": "spread-line1",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    },
+    {
+      "icon_id": "4235661",
+      "name": "向下展开/折叠",
+      "font_class": "GroupCopy",
+      "unicode": "e618",
+      "unicode_decimal": 58904
+    },
+    {
+      "icon_id": "4235714",
+      "name": "向上展开/折叠",
+      "font_class": "xiangshang",
+      "unicode": "e628",
+      "unicode_decimal": 58920
+    },
     {
       "icon_id": "22734805",
       "name": "上游",

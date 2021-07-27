@@ -69,6 +69,6 @@ npm run serve
 ### 使用的安装包和技术点
 
 ```
-安装包: vue, vue-router, vuex, element-ui, less, mxgraph, echarts,
-技术点: 虚拟列表, 递归组件
+安装包: vue, vue-router, vuex, element-ui, less, mxgraph, echarts, gitbook
+技术点: 虚拟列表, 递归组件, 图表联动,
 ```
