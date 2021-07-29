@@ -13,9 +13,9 @@ const port = process.env.VUE_APP_PORT || 8080 // dev port
 module.exports = {
   // publicPath: './',
   publicPath: '/test-by-element/',
-  outputDir: path.resolve(__dirname, '../dist'),
+  outputDir: process.env.outputDir,
   assetsDir: 'static',
-  indexPath: path.resolve(__dirname, '../dist/index.html'),
+  indexPath: 'index.html',
   lintOnSave: false,
   productionSourceMap: false,
   devServer: {

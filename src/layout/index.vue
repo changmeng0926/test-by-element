@@ -25,17 +25,13 @@
           </el-submenu>
         </el-submenu>-->
 
-        <el-menu-item index="/board">可视化</el-menu-item>
+        <el-menu-item index="/visual">可视化</el-menu-item>
         <el-menu-item index="/permission">permission</el-menu-item>
 
-        <el-submenu index="3">
+        <!-- <el-submenu index="3">
           <template slot="title">components</template>
           <el-menu-item index="/VirtualList">虚拟列表</el-menu-item>
-          <el-menu-item index="/Recursion">递归组件</el-menu-item>
-          <el-menu-item index="/Calendar">日历</el-menu-item>
-          <el-menu-item index="/DragLayout">拖拽布局</el-menu-item>
-          <el-menu-item index="/ShoppingTrolley">购物车</el-menu-item>
-        </el-submenu>
+        </el-submenu>-->
         <el-menu-item index="/notes">notes</el-menu-item>
       </el-menu>
     </div>

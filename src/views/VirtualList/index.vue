@@ -15,9 +15,6 @@
       <el-tab-pane label="去掉高度限制" name="unfixed">
         <UnfixedHeight v-if="isUnfixed" />
       </el-tab-pane>
-      <el-tab-pane label="test" name="test">
-        <Test v-if="isTest" />
-      </el-tab-pane>
     </el-tabs>
   </div>
 </template>
@@ -26,17 +23,15 @@
 import Select from "./component/Select.vue";
 import BaseList from "./component/BaseList.vue";
 import UnfixedHeight from "./component/UnfixedHeight.vue";
-import Test from "./component/Test.vue";
 export default {
   name: 'VirtualList',
-  components: { Select, BaseList, UnfixedHeight, Test },
+  components: { Select, BaseList, UnfixedHeight },
   data () {
     return {
-      activeName: 'test',
+      activeName: 'base',
       isBase: false,
       isSelect: false,
       isUnfixed: false,
-      isTest: true,
     }
   },
   watch: {},
@@ -49,22 +44,14 @@ export default {
         this.isBase = true
         this.isSelect = false
         this.isUnfixed = false
-        this.isTest = false
       } else if (v.name === 'select') {
         this.isBase = false
         this.isSelect = true
         this.isUnfixed = false
-        this.isTest = false
       } else if (v.name === 'unfixed') {
         this.isBase = false
         this.isSelect = false
         this.isUnfixed = true
-        this.isTest = false
-      } else if (v.name === 'test') {
-        this.isBase = false
-        this.isSelect = false
-        this.isUnfixed = true
-        this.isTest = true
       }
     }
   }

@@ -1,9 +1,9 @@
 @font-face {
   font-family: "iconfont"; /* Project id 1523948 */
-  src: url('iconfont.woff2?t=1627370579854') format('woff2'),
-       url('iconfont.woff?t=1627370579854') format('woff'),
-       url('iconfont.ttf?t=1627370579854') format('truetype'),
-       url('iconfont.svg?t=1627370579854#iconfont') format('svg');
+  src: url('iconfont.woff2?t=1627550895161') format('woff2'),
+       url('iconfont.woff?t=1627550895161') format('woff'),
+       url('iconfont.ttf?t=1627550895161') format('truetype'),
+       url('iconfont.svg?t=1627550895161#iconfont') format('svg');
 }
 
 .iconfont {
@@ -12,6 +12,78 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-kebianji:before {
+  content: "\e622";
+}
+
+.icon-kanban:before {
+  content: "\e6d8";
+}
+
+.icon-biaoge:before {
+  content: "\e643";
+}
+
+.icon-rili:before {
+  content: "\e61d";
+}
+
+.icon-rili1:before {
+  content: "\e61f";
+}
+
+.icon-digui:before {
+  content: "\e71e";
+}
+
+.icon-rili2:before {
+  content: "\e620";
+}
+
+.icon-tuozhuai:before {
+  content: "\e649";
+}
+
+.icon-tuozhuai1:before {
+  content: "\e638";
+}
+
+.icon-tuozhuai2:before {
+  content: "\e642";
+}
+
+.icon-biaodanliebiao-:before {
+  content: "\e621";
+}
+
+.icon-biaodanliebiao:before {
+  content: "\e637";
+}
+
+.icon-zhankai-menu:before {
+  content: "\e61b";
+}
+
+.icon-zhaikai-menu:before {
+  content: "\e61c";
+}
+
+.icon-zhankai:before {
+  content: "\e636";
+}
+
+.icon-zhankai1:before {
+  content: "\e6de";
+}
+
+.icon-shouqi:before {
+  content: "\e6df";
+}
+
+.icon-fold1:before {
+  content: "\e61a";
 }
 
 .icon-spread-line:before {
