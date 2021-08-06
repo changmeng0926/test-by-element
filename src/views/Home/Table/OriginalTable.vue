@@ -11,7 +11,7 @@ export default {
   data () {
     return {
       list: [],
-      headList: ['部门', '应用', '层', '成员']
+      headList: ['部门', '应用', '层', '普通成员']
     }
   },
   watch: {},
@@ -136,5 +136,6 @@ export default {
 }
 /deep/.user-item {
   line-height: 18px;
+  color: #575859;
 }
 </style>

@@ -46,13 +46,13 @@
           </el-menu-item-group>
         </el-submenu>
 
-        <el-submenu index="3">
+        <el-submenu index="3" class="table">
           <template slot="title">
             <i class="iconfont icon-biaoge"></i>
             <span slot="title">Table</span>
           </template>
           <el-menu-item-group>
-            <el-menu-item index="/home/originalTable">原生表格</el-menu-item>
+            <el-menu-item index="/home/originalTable">自定义合并表格</el-menu-item>
           </el-menu-item-group>
         </el-submenu>
 
@@ -177,5 +177,15 @@ export default {
   text-align: center;
   font-size: 18px;
   display: inline-block;
+}
+/deep/.el-menu-item,
+/deep/.el-submenu__title {
+  height: 48px;
+  line-height: 48px;
+}
+/deep/.table.el-submenu {
+  .el-menu-item-group__title {
+    display: none;
+  }
 }
 </style>
