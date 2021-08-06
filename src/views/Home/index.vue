@@ -46,10 +46,15 @@
           </el-menu-item-group>
         </el-submenu>
 
-        <el-menu-item index="/home/table">
-          <i class="iconfont icon-biaoge"></i>
-          <span slot="title">Table</span>
-        </el-menu-item>
+        <el-submenu index="3">
+          <template slot="title">
+            <i class="iconfont icon-biaoge"></i>
+            <span slot="title">Table</span>
+          </template>
+          <el-menu-item-group>
+            <el-menu-item index="/home/originalTable">原生表格</el-menu-item>
+          </el-menu-item-group>
+        </el-submenu>
 
         <el-menu-item index="/home/calendar">
           <i class="iconfont icon-rili2"></i>
@@ -135,6 +140,7 @@ export default {
   // bottom: 0;
   bottom: 50%;
   transform: translate(0, 50%);
+  z-index: 1;
   i {
     font-size: 24px;
     &:hover {

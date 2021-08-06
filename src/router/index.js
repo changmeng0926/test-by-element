@@ -99,12 +99,12 @@ const router = new VueRouter({
               },
             },
             {
-              path: 'table',
-              component: () => import('@/views/Home/Table'),
-              name: 'Table',
+              path: 'originalTable',
+              component: () => import('@/views/Home/Table/OriginalTable'),
+              name: 'OriginalTable',
               meta: {
-                title: 'table',
-                icon: 'table',
+                title: 'originalTable',
+                icon: 'originalTable',
                 affix: true,
               },
             },
