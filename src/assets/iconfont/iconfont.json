@@ -6,6 +6,41 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "23043469",
+      "name": "树图",
+      "font_class": "shutu1",
+      "unicode": "e7a5",
+      "unicode_decimal": 59301
+    },
+    {
+      "icon_id": "1450219",
+      "name": "雷达图",
+      "font_class": "leidatu",
+      "unicode": "e694",
+      "unicode_decimal": 59028
+    },
+    {
+      "icon_id": "10789695",
+      "name": "雷达图",
+      "font_class": "leidatu1",
+      "unicode": "e624",
+      "unicode_decimal": 58916
+    },
+    {
+      "icon_id": "21874876",
+      "name": "联动",
+      "font_class": "liandong",
+      "unicode": "e6e0",
+      "unicode_decimal": 59104
+    },
+    {
+      "icon_id": "4495296",
+      "name": "引力图",
+      "font_class": "yinlitu",
+      "unicode": "e623",
+      "unicode_decimal": 58915
+    },
+    {
       "icon_id": "3180085",
       "name": "可编辑",
       "font_class": "kebianji",

@@ -1,9 +1,9 @@
 @font-face {
   font-family: "iconfont"; /* Project id 1523948 */
-  src: url('iconfont.woff2?t=1627550895161') format('woff2'),
-       url('iconfont.woff?t=1627550895161') format('woff'),
-       url('iconfont.ttf?t=1627550895161') format('truetype'),
-       url('iconfont.svg?t=1627550895161#iconfont') format('svg');
+  src: url('iconfont.woff2?t=1628243934250') format('woff2'),
+       url('iconfont.woff?t=1628243934250') format('woff'),
+       url('iconfont.ttf?t=1628243934250') format('truetype'),
+       url('iconfont.svg?t=1628243934250#iconfont') format('svg');
 }
 
 .iconfont {
@@ -12,6 +12,26 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-shutu1:before {
+  content: "\e7a5";
+}
+
+.icon-leidatu:before {
+  content: "\e694";
+}
+
+.icon-leidatu1:before {
+  content: "\e624";
+}
+
+.icon-liandong:before {
+  content: "\e6e0";
+}
+
+.icon-yinlitu:before {
+  content: "\e623";
 }
 
 .icon-kebianji:before {

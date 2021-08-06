@@ -15,13 +15,6 @@
         </span>
         <ChartTableRelev v-if="isChartTable" />
       </el-tab-pane>
-      <el-tab-pane name>
-        <span slot="label">
-          <i class="iconfont icon-gantetu5"></i>
-          甘特图
-        </span>
-        甘特图
-      </el-tab-pane>
       <el-tab-pane name="flowChart" label="flowChart">
         <span slot="label">
           <i class="iconfont icon-liuchengtu"></i>
@@ -31,10 +24,45 @@
       </el-tab-pane>
       <el-tab-pane name="forceMap" label="forceMap">
         <span slot="label">
+          <i class="iconfont icon-yinlitu"></i>
+          引力图
+        </span>
+        <ForceMap v-if="isForceMap" />
+      </el-tab-pane>
+      <el-tab-pane name>
+        <span slot="label">
+          <i class="iconfont icon-gantetu5"></i>
+          甘特图
+        </span>
+        甘特图
+      </el-tab-pane>
+      <el-tab-pane name>
+        <span slot="label">
           <i class="iconfont icon-guanxitu1"></i>
           关系图
         </span>
-        <ForceMap v-if="isForceMap" />
+        关系图
+      </el-tab-pane>
+      <el-tab-pane name>
+        <span slot="label">
+          <i class="iconfont icon-shutu1"></i>
+          树图
+        </span>
+        树图
+      </el-tab-pane>
+      <el-tab-pane name>
+        <span slot="label">
+          <i class="iconfont icon-liandong"></i>
+          联动和共享数据集
+        </span>
+        联动和共享数据集
+      </el-tab-pane>
+      <el-tab-pane name>
+        <span slot="label">
+          <i class="iconfont icon-leidatu"></i>
+          雷达图
+        </span>
+        雷达图
       </el-tab-pane>
     </el-tabs>
   </div>

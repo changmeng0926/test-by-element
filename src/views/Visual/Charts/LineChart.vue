@@ -32,6 +32,11 @@ export default {
       immediate: true,
       handler () {
         this.option && this.myChart.setOption(this.option)
+        setTimeout(() => {
+          window.onresize = () => {
+            this.myChart.resize()
+          }
+        }, 200)
       }
     },
     selectList: {
@@ -48,6 +53,11 @@ export default {
         }, {})
         this.option.legend.selected = selected
         this.myChart.setOption(this.option)
+        setTimeout(function () {
+          window.onresize = () => {
+            this.myChart.resize()
+          }
+        }, 200)
       }
     }
   },
