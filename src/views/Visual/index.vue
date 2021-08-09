@@ -1,33 +1,33 @@
 <template>
   <div class="board-content">
     <el-tabs v-model="activeName" type="border-card" @tab-click="tabChange">
-      <el-tab-pane name="barCharts" label="barCharts">
+      <el-tab-pane name="barCharts">
         <span slot="label">
           <i class="iconfont icon-tubiaozhuzhuangtu"></i>
           柱状图
         </span>
-        <BarCharts v-if="isBarCharts" />
+        <BarCharts v-if="activeName === 'barCharts'" />
       </el-tab-pane>
-      <el-tab-pane name="chartTable" label="chartTable">
+      <el-tab-pane name="chartTable">
         <span slot="label">
           <i class="iconfont icon-tubiaoliandong"></i>
           图表联动
         </span>
-        <ChartTableRelev v-if="isChartTable" />
+        <ChartTableRelev v-if="activeName === 'chartTable'" />
       </el-tab-pane>
-      <el-tab-pane name="flowChart" label="flowChart">
+      <el-tab-pane name="flowChart">
         <span slot="label">
           <i class="iconfont icon-liuchengtu"></i>
           流程图
         </span>
-        <DataFlow v-if="isFlowChart" />
+        <DataFlow v-if="activeName === 'flowChart'" />
       </el-tab-pane>
-      <el-tab-pane name="forceMap" label="forceMap">
+      <el-tab-pane name="forceMap">
         <span slot="label">
           <i class="iconfont icon-yinlitu"></i>
           引力图
         </span>
-        <ForceMap v-if="isForceMap" />
+        <ForceMap v-if="activeName === 'forceMap'" />
       </el-tab-pane>
       <el-tab-pane name>
         <span slot="label">
@@ -50,12 +50,12 @@
         </span>
         树图
       </el-tab-pane>
-      <el-tab-pane name>
+      <el-tab-pane name="dataSharing">
         <span slot="label">
           <i class="iconfont icon-liandong"></i>
           联动和共享数据集
         </span>
-        联动和共享数据集
+        <DataSharing v-if="activeName === 'dataSharing'" />
       </el-tab-pane>
       <el-tab-pane name>
         <span slot="label">
@@ -71,18 +71,15 @@
 <script>
 import ForceMap from "./Charts/ForceMap.vue";
 import BarCharts from "./Charts/BarCharts.vue";
+import DataSharing from "./Charts/DataSharing.vue";
 import DataFlow from "./DataFlow.vue";
 import ChartTableRelev from "./ChartTableRelev.vue";
 export default {
   name: 'Visual',
-  components: { ForceMap, BarCharts, DataFlow, ChartTableRelev },
+  components: { ForceMap, BarCharts, DataFlow, ChartTableRelev, DataSharing },
   data () {
     return {
       activeName: 'chartTable',
-      isForceMap: false,
-      isBarCharts: false,
-      isFlowChart: false,
-      isChartTable: true,
     }
   },
   watch: {},
@@ -92,32 +89,6 @@ export default {
   methods: {
     tabChange (v, e) {
       console.log(v.label, 'x');
-      if (v.label === 'forceMap') {
-        this.isForceMap = true
-        this.isBarCharts = false
-        this.isFlowChart = false
-        this.isChartTable = false
-      } else if (v.label === 'barCharts') {
-        this.isForceMap = false
-        this.isBarCharts = true
-        this.isFlowChart = false
-        this.isChartTable = false
-      } else if (v.label === 'flowChart') {
-        this.isForceMap = false
-        this.isBarCharts = false
-        this.isFlowChart = true
-        this.isChartTable = false
-      } else if (v.label === 'chartTable') {
-        this.isForceMap = false
-        this.isBarCharts = false
-        this.isFlowChart = false
-        this.isChartTable = true
-      } else {
-        this.isForceMap = false
-        this.isBarCharts = false
-        this.isFlowChart = false
-        this.isChartTable = false
-      }
     }
   }
 }
