@@ -57,12 +57,12 @@
         </span>
         <DataSharing v-if="activeName === 'dataSharing'" />
       </el-tab-pane>
-      <el-tab-pane name>
+      <el-tab-pane name="radar">
         <span slot="label">
           <i class="iconfont icon-leidatu"></i>
           雷达图
         </span>
-        雷达图
+        <Radar v-if="activeName === 'radar'" />
       </el-tab-pane>
     </el-tabs>
   </div>
@@ -72,11 +72,12 @@
 import ForceMap from "./Charts/ForceMap.vue";
 import BarCharts from "./Charts/BarCharts.vue";
 import DataSharing from "./Charts/DataSharing.vue";
+import Radar from "./Charts/Radar.vue";
 import DataFlow from "./DataFlow.vue";
 import ChartTableRelev from "./ChartTableRelev.vue";
 export default {
   name: 'Visual',
-  components: { ForceMap, BarCharts, DataFlow, ChartTableRelev, DataSharing },
+  components: { ForceMap, BarCharts, DataFlow, ChartTableRelev, DataSharing, Radar },
   data () {
     return {
       activeName: 'chartTable',
