@@ -28,6 +28,16 @@ const router = new VueRouter({
       hidden: true,
       children: [
         {
+          path: 'userDetail',
+          component: () => import('@/views/UserDetail'),
+          name: 'UserDetail',
+          meta: {
+            title: 'userDetail',
+            icon: 'userDetail',
+            affix: true,
+          },
+        },
+        {
           path: 'home',
           component: () => import('@/views/Home'),
           redirect: '/home/verticalTree',

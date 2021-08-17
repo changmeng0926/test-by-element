@@ -37,8 +37,13 @@
       </el-menu>
       <div class="head-right">
         <div class="user-message">
+          <el-avatar
+            class="user-photo"
+            :size="36"
+            src="https://img.alicdn.com/imgextra/i3/O1CN01Mn65HV1FfSEzR6DKv_!!6000000000514-55-tps-228-59.svg"
+          ></el-avatar>
           <i class="iconfont icon-yonghu1"></i>
-          <span class="user-name">{{message.name}}</span>
+          <span @click="goDetail" class="user-name">{{message.name}}</span>
         </div>
         <el-button @click="logOut" class="log-out" type="text">退出</el-button>
       </div>
@@ -87,6 +92,11 @@ export default {
       this.$store.commit('SET_USER', null)
       this.$router.push({ path: '/login' })
     },
+    goDetail () {
+      console.log('xx');
+      if (this.message.name === '游客') return
+      this.$router.push({ path: '/userDetail' })
+    },
   },
 }
 </script>
@@ -119,6 +129,7 @@ export default {
     color: #fff;
     font-size: 14px;
     margin-left: 10px;
+    cursor: pointer;
   }
 }
 .log-out {
