@@ -1,6 +1,7 @@
 <template>
   <div class="layout-content">
     <div class="header">
+      <div class="logo"></div>
       <el-menu
         :default-active="$route.path"
         class="el-menu-demo"
@@ -34,6 +35,13 @@
         </el-submenu>-->
         <el-menu-item index="/notes">notes</el-menu-item>
       </el-menu>
+      <div class="head-right">
+        <div class="user-message">
+          <i class="iconfont icon-yonghu1"></i>
+          <span class="user-name">{{message.name}}</span>
+        </div>
+        <el-button @click="logOut" class="log-out" type="text">退出</el-button>
+      </div>
     </div>
     <router-view class="main-content"></router-view>
   </div>
@@ -53,7 +61,7 @@ export default {
       immediate: true,
       handler (val) {
         // if (Object.keys(val).length === 0) {
-        //   this.$router.push({ path: '/Login' })
+        //   this.$router.push({ path: '/login' })
         // }
       }
     }
@@ -73,9 +81,13 @@ export default {
   methods: {
     handleSelect (key, keyPath) {
       this.$router.push({ path: key })
-      console.log(key, keyPath);
-    }
-  }
+      // console.log(key, keyPath);
+    },
+    logOut () {
+      this.$store.commit('SET_USER', null)
+      this.$router.push({ path: '/login' })
+    },
+  },
 }
 </script>
 
@@ -87,6 +99,31 @@ export default {
 .header {
   width: 100%;
   height: 60px;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(84, 92, 100);
+}
+.head-right {
+  display: flex;
+  align-items: center;
+  padding-right: 24px;
+  .icon-yonghu1 {
+    color: #fff;
+    font-size: 24px;
+  }
+  .user-message {
+    display: flex;
+    align-items: center;
+  }
+  .user-name {
+    color: #fff;
+    font-size: 14px;
+    margin-left: 10px;
+  }
+}
+.log-out {
+  color: #fff;
+  margin-left: 16px;
 }
 /deep/.el-menu.el-menu--horizontal {
   border: none;

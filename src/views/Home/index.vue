@@ -21,18 +21,6 @@
             <i class="iconfont icon-kanban"></i>
             <span slot="title">看板</span>
           </template>
-          <!-- <el-menu-item-group>
-            <span slot="title">the first group</span>
-            <el-menu-item index="1-1">选项1</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-          </el-menu-item-group>
-          <el-menu-item-group title="the second group">
-            <el-menu-item index="1-3">选项3</el-menu-item>
-          </el-menu-item-group>
-          <el-submenu index="1-4">
-            <span slot="title">选项4</span>
-            <el-menu-item index="1-4-1">选项1</el-menu-item>
-          </el-submenu>-->
         </el-submenu>
 
         <el-submenu index="2">
@@ -41,6 +29,7 @@
             <span slot="title">递归组件</span>
           </template>
           <el-menu-item-group>
+            <!-- <span slot="title">the first group</span> -->
             <el-menu-item index="/home/recursion">树状图切换</el-menu-item>
             <el-menu-item index="/home/dendrogram">树形图</el-menu-item>
             <el-menu-item index="/home/verticalTree">纵向树形图</el-menu-item>
@@ -91,7 +80,7 @@ export default {
   name: 'Home',
   data () {
     return {
-      isCollapse: true,
+      isCollapse: false,
     }
   },
   watch: {},
@@ -188,6 +177,11 @@ export default {
 /deep/.table.el-submenu {
   .el-menu-item-group__title {
     display: none;
+  }
+}
+/deep/.el-menu-item-group {
+  .el-menu-item-group__title {
+    padding: 0;
   }
 }
 </style>

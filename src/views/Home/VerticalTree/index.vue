@@ -29,7 +29,6 @@ export default {
   computed: {},
   mounted () {
     this.treeData = verTreeData
-    console.log('this.treeData', this.treeData);
   },
   methods: {},
 }

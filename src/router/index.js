@@ -20,7 +20,7 @@ const router = new VueRouter({
     y: 0,
   }),
   routes: [
-    { path: '/Login', hidden: true, name: 'Login', component: () => import('@/views/Login') },
+    { path: '/login', hidden: true, name: 'Login', component: () => import('@/views/Login') },
     {
       path: '/',
       component: Layout,
