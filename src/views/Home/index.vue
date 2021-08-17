@@ -43,6 +43,7 @@
           <el-menu-item-group>
             <el-menu-item index="/home/recursion">树状图切换</el-menu-item>
             <el-menu-item index="/home/dendrogram">树形图</el-menu-item>
+            <el-menu-item index="/home/verticalTree">纵向树形图</el-menu-item>
           </el-menu-item-group>
         </el-submenu>
 
@@ -53,6 +54,7 @@
           </template>
           <el-menu-item-group>
             <el-menu-item index="/home/originalTable">自定义合并表格</el-menu-item>
+            <el-menu-item index="/home/activeTable">动态表格</el-menu-item>
           </el-menu-item-group>
         </el-submenu>
 

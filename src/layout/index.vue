@@ -52,9 +52,9 @@ export default {
     message: {
       immediate: true,
       handler (val) {
-        if (Object.keys(val).length === 0) {
-          this.$router.push({ path: '/Login' })
-        }
+        // if (Object.keys(val).length === 0) {
+        //   this.$router.push({ path: '/Login' })
+        // }
       }
     }
   },

@@ -11,7 +11,7 @@
       </div>
     </div>
     <div class="right">
-      <Tree :list="tesstData" @showDialog="showDialog" />
+      <Tree :list="treeData" @showDialog="showDialog" />
 
       <el-dialog
         title="提示"
@@ -42,7 +42,7 @@ export default {
   data () {
     return {
       dialogVisible: false,
-      tesstData: [],
+      treeData: [],
       list: [
         {
           name: '萤石',
@@ -58,8 +58,8 @@ export default {
   watch: {},
   computed: {},
   mounted () {
-    this.tesstData = productData
-    console.log('this.tesstData', this.tesstData);
+    this.treeData = productData
+    console.log('this.treeData', this.treeData);
   },
   methods: {
     close () {

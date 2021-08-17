@@ -30,7 +30,7 @@ const router = new VueRouter({
         {
           path: 'home',
           component: () => import('@/views/Home'),
-          redirect: '/home/calendar',
+          redirect: '/home/verticalTree',
           name: 'Home',
           meta: {
             title: 'home',
@@ -55,6 +55,16 @@ const router = new VueRouter({
               meta: {
                 title: 'recursion',
                 icon: 'recursion',
+                affix: true,
+              },
+            },
+            {
+              path: 'verticalTree',
+              component: () => import('@/views/Home/VerticalTree'),
+              name: 'VerticalTree',
+              meta: {
+                title: 'verticalTree',
+                icon: 'verticalTree',
                 affix: true,
               },
             },
@@ -105,6 +115,16 @@ const router = new VueRouter({
               meta: {
                 title: 'originalTable',
                 icon: 'originalTable',
+                affix: true,
+              },
+            },
+            {
+              path: 'activeTable',
+              component: () => import('@/views/Home/Table/ActiveTable'),
+              name: 'ActiveTable',
+              meta: {
+                title: 'activeTable',
+                icon: 'activeTable',
                 affix: true,
               },
             },

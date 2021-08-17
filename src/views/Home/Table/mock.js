@@ -410,3 +410,51 @@ export const relationList = [
     ],
   },
 ]
+
+export const tableHead = [
+  { label: '名字', value: 'name', isShow: true, disabled: true },
+  { label: '年龄', value: 'age', isShow: true, disabled: true },
+  { label: '工作', value: 'job', isShow: true, disabled: true },
+  { label: '学历', value: 'education', isShow: true, disabled: true },
+  { label: '婚姻状况', value: 'maritalStatus', isShow: false, disabled: false },
+  { label: '籍贯', value: 'nativePlace', isShow: false, disabled: false },
+  { label: '服兵役', value: 'serviceDefence', isShow: false, disabled: false },
+]
+export const tableData = [
+  {
+    name: '张三',
+    age: 18,
+    job: '学生',
+    education: '大学',
+    maritalStatus: 1,
+    nativePlace: '湖北省',
+    serviceDefence: false,
+  },
+  {
+    name: '李四',
+    age: 24,
+    job: '武器研究员',
+    education: '大学',
+    maritalStatus: 2,
+    nativePlace: '山东省',
+    serviceDefence: true,
+  },
+  {
+    name: '王五',
+    age: 24,
+    job: '火箭设计师',
+    education: '大学',
+    maritalStatus: 1,
+    nativePlace: '山西省',
+    serviceDefence: true,
+  },
+  {
+    name: '赵六',
+    age: 33,
+    job: '坦克设计工程师',
+    education: '大学',
+    maritalStatus: 2,
+    nativePlace: '湖南省',
+    serviceDefence: true,
+  },
+]
