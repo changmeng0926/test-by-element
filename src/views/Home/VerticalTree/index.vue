@@ -39,6 +39,8 @@ export default {
   padding: 24px;
   min-height: 100%;
   display: flex;
+  background: #f6f7fb;
+  width: fit-content;
 }
 .title {
   text-align: center;

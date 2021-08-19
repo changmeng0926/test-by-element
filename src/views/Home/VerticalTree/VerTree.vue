@@ -112,7 +112,8 @@ i.icon-jia {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  border: 2px solid #d5d5d5;
+  box-shadow: 0 1px 0.02rem 1px rgb(114 156 208 / 50%);
+  background: #fff;
   border-radius: 4px;
   padding: 10px 0;
 }
