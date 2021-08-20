@@ -52,5 +52,13 @@ export default {
 }
 .vertical-tree-item {
   margin-right: 24px;
+  & > .ver-tree.ver-trees {
+    .tree-content.trees-content {
+      &:after,
+      &:before {
+        border: none;
+      }
+    }
+  }
 }
 </style>

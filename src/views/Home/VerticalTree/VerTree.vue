@@ -52,32 +52,6 @@ export default {
   align-items: center;
   position: relative;
 }
-.trees-content {
-  &:first-child {
-    &:before {
-      position: absolute;
-      content: "";
-      top: 0;
-      border-top: 2px solid #fff;
-      left: -1px;
-      width: 50%;
-      height: 0px;
-      z-index: 80;
-    }
-  }
-  &:last-child {
-    &:after {
-      position: absolute;
-      content: "";
-      top: 0%;
-      border-top: 2px solid #fff;
-      left: calc(50% + 0.5px);
-      width: 50%;
-      height: 0px;
-      z-index: 80;
-    }
-  }
-}
 .tree-node {
   padding: 0 8px;
   height: 124px;
@@ -101,7 +75,7 @@ i.icon-jia {
   transform: translate(50%, 34px);
   cursor: pointer;
   z-index: 81;
-  background: #fff;
+  background: #f6f7fb;
 }
 .tree-item {
   writing-mode: vertical-lr;
@@ -113,7 +87,7 @@ i.icon-jia {
   text-overflow: ellipsis;
   white-space: nowrap;
   box-shadow: 0 1px 0.02rem 1px rgb(114 156 208 / 50%);
-  background: #fff;
+  background: #f6f7fb;
   border-radius: 4px;
   padding: 10px 0;
 }
@@ -121,22 +95,35 @@ i.icon-jia {
   display: flex;
   justify-content: center;
 }
-.ver-trees {
+.ver-tree.ver-trees {
   position: relative;
-  &:after {
-    position: absolute;
-    content: "";
-    top: 0;
-    border-top: 2px solid #d5d5d5;
-    left: 0;
-    width: 100%;
-    height: 1px;
+  .tree-content.trees-content {
+    &:after {
+      position: absolute;
+      content: "";
+      top: 0;
+      border-top: 2px solid #d5d5d5;
+      left: 0;
+      width: 100%;
+      height: 1px;
+    }
+  }
+  .tree-content.trees-content:first-child {
+    &:after {
+      width: calc(50%);
+      left: 50%;
+      border-top: 2px solid #d5d5d5;
+    }
+  }
+  .tree-content.trees-content:last-child {
+    &:after {
+      width: calc(50%);
+      right: 50%;
+      border-top: 2px solid #d5d5d5;
+    }
   }
 }
 .node-line {
-  // width: 2px;
-  // height: 25px;
-  // background: #d5d5d5;
   position: relative;
   margin-bottom: 25px;
   &:after {

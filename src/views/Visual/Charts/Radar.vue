@@ -36,7 +36,14 @@ export default {
           data: gradeTable.map(i => i.name)
         },
         radar: {
-          indicator: indicator,
+          indicator: indicator.map((i, d) => {
+            if (d === 0) {
+              i.axisLabel = {
+                show: true
+              }
+            }
+            return i
+          }),
         },
         series: [{
           type: 'radar',

@@ -93,7 +93,6 @@ export default {
       this.$router.push({ path: '/login' })
     },
     goDetail () {
-      console.log('xx');
       if (this.message.name === '游客') return
       this.$router.push({ path: '/userDetail' })
     },
