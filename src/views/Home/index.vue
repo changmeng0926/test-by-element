@@ -44,6 +44,7 @@
           <el-menu-item-group>
             <el-menu-item index="/home/originalTable">自定义合并表格</el-menu-item>
             <el-menu-item index="/home/activeTable">动态表格</el-menu-item>
+            <el-menu-item index="/home/random">随机点名</el-menu-item>
           </el-menu-item-group>
         </el-submenu>
 

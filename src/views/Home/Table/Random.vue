@@ -1,5 +1,22 @@
 <template>
-  <div ref="raodom-table"></div>
+  <div class="raodom-table" id="rTable">
+    <el-button class="call-btn" type="primary" size="small" @click="callName">点名</el-button>
+    <table>
+      <thead>
+        <tr>
+          <th>座位表</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr v-for="(i, row) in userList" :key="row">
+          <td :class="setActive(row,col)" v-for="(n, col) in i" :key="col">
+            <span :class="setClass(n)">{{n}}</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </template>
 
 <script>
@@ -22,18 +39,117 @@ export default {
         ['卢海潮', '郑鹏辉', '      ', '陈广辉', '   ', '      ', '      ', '      ', '      ']
       ],
       groupLeader: ['范丽娜', '张国泰', '王伟超', '李  桐', '叶天阳', '冯丽莹', '张浩斌', '肖震昆', '程  磊'],
+      activeTd: null,
     }
   },
   watch: {},
   computed: {},
-  mounted () { },
+  mounted () {
+    // this.initTable()
+  },
   methods: {
-    initTable () {
-      let html = this.userList.reduce((h, i, x) => { }, '')
+    callName () {
+      this.activeTd = this.CreateIndex()
     },
+    setClass (n) {
+      return this.groupLeader.indexOf(n) > -1 ? 'leader' : 'menber'
+    },
+    setActive (row, col) {
+      let className = ''
+      if (this.activeTd) {
+        const { rowIndex, colIndex } = this.activeTd
+        className += rowIndex === row && colIndex === col ? 'active' : ''
+      }
+      return className
+    },
+    // 随机生成数组下标,包含最小值, 但不包含最大值
+    randomCreate (max, min) {
+      return Math.floor(Math.random() * (max - min)) + min
+    },
+    // 随机生成二维数组下标
+    CreateIndex () {
+      let colIndex = null
+      let rowIndex = this.randomCreate(this.userList.length, 0)
+      do {
+        colIndex = this.randomCreate(this.userList[rowIndex].length, 0)
+      } while (this.userList[rowIndex][colIndex].trim() === '');
+      console.log(this.userList[rowIndex][colIndex], colIndex, rowIndex);
+      return { rowIndex, colIndex, name: this.userList[rowIndex][colIndex] }
+    },
+    // initTable () {
+    //   let html = '<table><thead><tr><th>座位表</th></tr></thead><tbody>'
+    //   let html_ = this.userList.reduce((h, x) => {
+    //     h += `<tr>`
+    //     x.forEach(j => {
+    //       if (this.groupLeader.indexOf(j)) {
+    //         h += `<td><span class='leader'>${j}</span<></td>`
+    //       } else {
+    //         h += `<td><span class='member'>${j}</span<></td>`
+    //       }
+    //     })
+    //     h += `</tr>`
+    //     return h
+    //   }, '')
+    //   html += html_ + `</tbody></table>`
+    //   console.log('html', html);
+    //   const el = document.getElementById('rTable')
+    //   el.innerHTML = html
+    // },
   },
 }
 </script>
 
 <style lang='less' scoped>
+.raodom-table {
+  padding: 24px;
+}
+/deep/table {
+  width: 100%;
+  border-spacing: 0;
+  border-bottom: 1px solid #d5d5d5;
+  border-right: 1px solid #d5d5d5;
+  thead {
+    background: #eee;
+    display: table-caption;
+  }
+}
+/deep/thead tr {
+  display: flex;
+  th {
+    flex: 1;
+  }
+}
+/deep/tr {
+  th,
+  td {
+    // line-height: 32px;
+    text-align: center;
+    border-top: 1px solid #d5d5d5;
+    border-left: 1px solid #d5d5d5;
+  }
+  th {
+    line-height: 32px;
+  }
+  td {
+    padding: 12px;
+  }
+}
+.call-btn {
+  margin-bottom: 16px;
+  float: right;
+}
+.leader {
+  color: #1f1f1f;
+  font-weight: 600;
+  font-size: 13px;
+}
+.menber {
+  color: #2a2a2a;
+}
+.active {
+  background: #409eff;
+  span {
+    color: #fff;
+  }
+}
 </style>

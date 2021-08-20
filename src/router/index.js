@@ -139,6 +139,16 @@ const router = new VueRouter({
               },
             },
             {
+              path: 'random',
+              component: () => import('@/views/Home/Table/Random'),
+              name: 'Random',
+              meta: {
+                title: 'random',
+                icon: 'random',
+                affix: true,
+              },
+            },
+            {
               path: 'dragLayout',
               component: () => import('@/views/Home/DragLayout'),
               name: 'DragLayout',
