@@ -6,6 +6,27 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "2665187",
+      "name": "蛇",
+      "font_class": "she",
+      "unicode": "e783",
+      "unicode_decimal": 59267
+    },
+    {
+      "icon_id": "7002163",
+      "name": "蛇",
+      "font_class": "she1",
+      "unicode": "e699",
+      "unicode_decimal": 59033
+    },
+    {
+      "icon_id": "16994036",
+      "name": "小游戏",
+      "font_class": "xiaoyouxi",
+      "unicode": "e6b8",
+      "unicode_decimal": 59064
+    },
+    {
       "icon_id": "1110427",
       "name": "用户",
       "font_class": "yonghu",

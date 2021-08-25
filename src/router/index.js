@@ -40,7 +40,7 @@ const router = new VueRouter({
         {
           path: 'home',
           component: () => import('@/views/Home'),
-          redirect: '/home/verticalTree',
+          redirect: '/home/smallSnake',
           name: 'Home',
           meta: {
             title: 'home',
@@ -155,6 +155,16 @@ const router = new VueRouter({
               meta: {
                 title: 'dragLayout',
                 icon: 'dragLayout',
+                affix: true,
+              },
+            },
+            {
+              path: 'smallSnake',
+              component: () => import('@/views/Home/Game/SmallSnake'),
+              name: 'SmallSnake',
+              meta: {
+                title: 'smallSnake',
+                icon: 'smallSnake',
                 affix: true,
               },
             },

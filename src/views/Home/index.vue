@@ -67,6 +67,19 @@
           <i class="iconfont icon-gouwugouwuchedinggou"></i>
           <span slot="title">购物车</span>
         </el-menu-item>
+
+        <el-submenu index="4" class="game">
+          <template slot="title">
+            <i class="iconfont icon-xiaoyouxi"></i>
+            <!-- <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-xiaoyouxi" />
+            </svg>-->
+            <span slot="title">小游戏</span>
+          </template>
+          <el-menu-item-group>
+            <el-menu-item index="/home/smallSnake">小蛇蛇</el-menu-item>
+          </el-menu-item-group>
+        </el-submenu>
       </el-menu>
     </div>
 
@@ -170,6 +183,9 @@ export default {
   font-size: 18px;
   display: inline-block;
 }
+.icon-xiaoyouxi {
+  font-size: 24px !important;
+}
 /deep/.el-menu-item,
 /deep/.el-submenu__title {
   height: 48px;
@@ -184,5 +200,15 @@ export default {
   .el-menu-item-group__title {
     padding: 0;
   }
+}
+</style>
+<style>
+.icon {
+  width: 24px;
+  height: 24px;
+  font-size: 16px;
+  fill: currentColor;
+  overflow: hidden;
+  margin-right: 5px;
 }
 </style>
