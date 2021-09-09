@@ -96,6 +96,8 @@ export default {
         series: [{
           data: [120, 200, 150, 80, 70, 110, 130],
           type: 'bar',
+          barWidth: '100',
+          barCategoryGap: '60%',
           // 图形样式
           itemStyle: {
             normal: {

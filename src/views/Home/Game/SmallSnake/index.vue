@@ -3,12 +3,43 @@
     <div class="container">
       <div ref="house" class="snake-home"></div>
       <div class="explain">
-        <el-button
-          @click="pauseGame"
-          :disabled="status===0||status===3"
-          size="mini"
-        >{{status===0||status===1?'暂停':'继续'}}</el-button>
-        <el-button :disabled="status===1" @click="startGame" size="mini">开始游戏</el-button>
+        <div class="scoreboard">当前分数{{score}}</div>
+        <div class="btn">
+          <el-button
+            class="pause-game"
+            @click="pauseGame"
+            :disabled="status===0||status===3"
+            type="primary"
+          >{{(status===0||status===1||status===3)?'暂停':'继续'}}</el-button>
+          <el-button
+            class="start-game"
+            :disabled="status===1||status===2"
+            @click="startGame"
+            type="success"
+          >开始游戏</el-button>
+          <el-button
+            class="game-over"
+            :disabled="status===0||status===3"
+            @click="gameOver"
+            type="warning"
+          >结束游戏</el-button>
+        </div>
+        <!-- <div class="introduction">
+          <div class="up">
+            <i class="iconfont icon-shangjiantou"></i>
+          </div>
+          <div class="left-right">
+            <div class="left">
+              <i class="iconfont icon-zuo-jiantou"></i>
+            </div>
+            <div class="right">
+              <i class="iconfont icon-youjiantou"></i>
+            </div>
+          </div>
+          <div class="down">
+            <i class="iconfont icon-xiajiantou"></i>
+          </div>
+        </div>-->
       </div>
     </div>
   </div>
@@ -22,13 +53,15 @@ export default {
   props: {},
   data () {
     return {
-      food: null,
-      snake: [],
-      snakeBody: [],
-      speed: 15,
-      direction: 'right',
-      status: 0,  //  0结束, 1开始, 2暂停, 3结束
-      joinList: [],
+      score: 0, //  分数
+      unit: 1,  //  每个食物的分值
+      speed: 200, //  速度, 单位时间
+      food: null, //  食物
+      snake: [],  //  初始蛇数据
+      snakeBody: [],  //  蛇dom
+      direction: 'right', //  移动方向
+      status: 0,  //  0初始状态, 1开始, 2暂停, 3结束
+      joinList: [], //  用来储存吃掉的食物,尾巴通过时将会被消化掉
       timeId: null,
     }
   },
@@ -58,15 +91,18 @@ export default {
       let el = this.$refs.house
       let i = 0
       let html = ''
-      for (i; i <= 600 / 15; i++) {
+      for (i; i <= 900 / 15; i++) {
         let width = '1px'
         let height = '1px'
         let background = '#d5d5d5'
         let top = i * 15 + 'px'
         let left = i * 15 + 'px'
-        let cloStyle = `height:${height};top:${top};background:${background};width:600px`
+        if (i <= 600 / 15) {
+          let cloStyle = `height:${height};top:${top};background:${background};width:900px`
+          html += `<div class="line 1" style=${cloStyle}></div>`
+        }
         let rowStyle = `width:${width};left:${left};background:${background};height:600px`
-        html += `<div class="line" style=${cloStyle}></div><div class="line" style=${rowStyle}></div>`
+        html += `<div class="line 2" style=${rowStyle}></div>`
       }
       el.innerHTML = html
     },
@@ -122,6 +158,7 @@ export default {
       switch (this.direction) {
         case 'right':
           if (parseInt(style.left) + unit === offsetWidth) {
+            this.$message.warning('game over')
             this.gameOver()
             return
           }
@@ -129,6 +166,7 @@ export default {
           break;
         case 'top':
           if (parseInt(style.top) - unit < 0) {
+            this.$message.warning('game over')
             this.gameOver()
             return
           }
@@ -136,6 +174,7 @@ export default {
           break;
         case 'left':
           if (parseInt(style.left) - unit < 0) {
+            this.$message.warning('game over')
             this.gameOver()
             return
           }
@@ -143,6 +182,7 @@ export default {
           break;
         case 'bottom':
           if (parseInt(style.top) + unit >= offsetHeight) {
+            this.$message.warning('game over')
             this.gameOver()
             return
           }
@@ -165,13 +205,32 @@ export default {
     snakeEatting () {
       const { left, top } = this.snakeBody[0].style
       if (this.food.style.left === left && this.food.style.top === top) {
+        this.score += this.unit
         this.joinList.push(this.food)
         this.createFood(15, 15, this.$refs.house, this.randomColor())
+        // 根据长度来控制速度变化
+        const length = this.snakeBody.length
+        if (length === 8 || length === 14 || length === 20 || length === 25 || length === 30) {
+          this.speed -= 20
+          this.unit += 1
+          clearInterval(this.timeId)
+          this.timeId = setInterval(() => {
+            this.snakeMove(15)
+          }, this.speed)
+        } else if (length === 35 || length === 40 || length === 45 || length === 50 || length === 55) {
+          this.unit += 1
+          this.speed -= 10
+          clearInterval(this.timeId)
+          this.timeId = setInterval(() => {
+            this.snakeMove(15)
+          }, this.speed)
+        }
       }
     },
     // 吃的过程
     eatting () {
-      const { left, top } = this.snakeBody[this.snakeBody.length - 1].style
+      const length = this.snakeBody.length
+      const { left, top } = this.snakeBody[length - 1].style
       this.joinList.forEach(i => {
         if (i.style.left === left && i.style.top === top) {
           i.status = 1
@@ -193,18 +252,8 @@ export default {
         this.direction = 'right'
         this.createSnake(15, 15, this.$refs.house)
       }
-      if (this.status === 1) {
-        this.$alert('确定要重新开始游戏吗', '提示', {
-          confirmButtonText: '确定',
-          callback: action => {
-            this.$message({
-              type: 'info',
-              message: `action: ${action}`
-            });
-          }
-        });
-      }
       window.onkeydown = e => {
+        if (this.status === 2) return
         if (e.keyCode !== 37 && e.keyCode !== 38 && e.keyCode !== 39 && e.keyCode !== 40) return
         switch (e.keyCode) {
           case 37:
@@ -232,19 +281,25 @@ export default {
       this.status = 1
       this.timeId = setInterval(() => {
         this.snakeMove(15)
-      }, 200)
+      }, this.speed)
     },
-    // Pause
+    // Pause game
     pauseGame () {
-      clearInterval(this.timeId)
-      this.timeId = null
-      this.status = 0
+      if (this.status === 2) {
+        this.startGame()
+        this.status = 1
+      } else {
+        clearInterval(this.timeId)
+        this.timeId = null
+        this.status = 2
+      }
     },
     gameOver () {
-      this.$message.warning('game over')
       clearInterval(this.timeId)
       this.timeId = null
       this.status = 3
+      this.speed = 200
+      this.unit = 1
     },
     // Random color
     randomColor () {
@@ -266,18 +321,16 @@ export default {
   min-height: 100%;
 }
 .container {
-  // border: 1px solid #d5d5d5;
   display: flex;
   min-height: 100%;
 }
 .explain {
   flex: 1;
-  // border-right: 1px solid #d5d5d5;
   padding: 0 16px;
 }
 .snake-home {
   height: 600px;
-  width: 600px;
+  width: 900px;
   position: relative;
 }
 .vertical-line,
@@ -295,5 +348,24 @@ export default {
 }
 /deep/.line {
   position: absolute;
+}
+.btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.game-over,
+.pause-game,
+.start-game {
+  width: 60%;
+  margin: 0;
+}
+.el-button & + .el-button {
+  margin-top: 16px;
+}
+.scoreboard {
+  line-height: 48px;
+  font-size: 24px;
+  text-align: center;
 }
 </style>

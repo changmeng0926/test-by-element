@@ -38,6 +38,39 @@ const router = new VueRouter({
           },
         },
         {
+          path: 'map',
+          component: () => import('@/views/Map'),
+          name: 'Map',
+          meta: {
+            title: 'map',
+            icon: 'map',
+            affix: true,
+          },
+        },
+        {
+          path: 'accountBook',
+          component: () => import('@/views/AccountBook'),
+          redirect: '/accountBook/board',
+          name: 'AccountBook',
+          meta: {
+            title: 'accountBook',
+            icon: 'accountBook',
+            affix: true,
+          },
+          children: [
+            {
+              path: 'board',
+              component: () => import('@/views/AccountBook/components/Board'),
+              name: 'Board',
+              meta: {
+                title: 'board',
+                icon: 'board',
+                affix: true,
+              },
+            },
+          ],
+        },
+        {
           path: 'home',
           component: () => import('@/views/Home'),
           redirect: '/home/smallSnake',
