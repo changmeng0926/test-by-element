@@ -60,12 +60,11 @@ export default {
 }
 .trees-node:before {
   content: "";
-  width: 0;
-  height: 25px;
-  border-left: 2px solid #d5d5d5;
+  .boxSize(0px, 25px);
+  border-left: 1px solid @treeLine;
   position: absolute;
   bottom: -25px;
-  left: calc(50% - 1px);
+  left: calc(50% - 0.5px);
 }
 i.iconfont.icon-jian1,
 i.icon-jia {
@@ -79,15 +78,13 @@ i.icon-jia {
 }
 .tree-item {
   writing-mode: vertical-lr;
-  height: 124px;
-  width: 34px;
+  .boxSize(34px, 124px);
+  .aLineWords();
   line-height: 32px;
   font-size: 14px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  box-shadow: 0 1px 0.02rem 1px rgb(114 156 208 / 50%);
-  background: #f6f7fb;
+  box-shadow: 0 0 4px 0 rgb(0 0 0 / 33%);
+  background: #fff;
+  border: 1px solid #b7b8ce;
   border-radius: 4px;
   padding: 10px 0;
 }
@@ -102,24 +99,23 @@ i.icon-jia {
       position: absolute;
       content: "";
       top: 0;
-      border-top: 2px solid #d5d5d5;
-      left: 0;
+      border-top: 1px solid @treeLine;
+      left: -0.5px;
       width: 100%;
-      height: 1px;
     }
   }
   .tree-content.trees-content:first-child {
     &:after {
       width: calc(50%);
-      left: 50%;
-      border-top: 2px solid #d5d5d5;
+      left: calc(50% - 0.5px);
+      border-top: 1px solid @treeLine;
     }
   }
   .tree-content.trees-content:last-child {
     &:after {
       width: calc(50%);
       right: 50%;
-      border-top: 2px solid #d5d5d5;
+      border-top: 1px solid @treeLine;
     }
   }
 }
@@ -130,10 +126,9 @@ i.icon-jia {
     position: absolute;
     content: "";
     top: 50%;
-    border-left: 2px solid #d5d5d5;
+    border-left: 1px solid @treeLine;
     left: -1px;
-    width: 0px;
-    height: 25px;
+    .boxSize(0px, 25px);
     z-index: 80;
   }
 }

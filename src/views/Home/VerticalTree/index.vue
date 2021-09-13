@@ -39,14 +39,14 @@ export default {
   padding: 24px;
   min-height: 100%;
   display: flex;
-  background: #f6f7fb;
+  background: #f5f7fa;
   width: fit-content;
 }
 .title {
   text-align: center;
   word-break: keep-all;
   line-height: 32px;
-  background: rgb(151, 154, 179, 0.16);
+  background: rgb(151 154 179 / 0.16);
   border-radius: 4px;
   min-width: 80px;
 }

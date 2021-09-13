@@ -2,6 +2,7 @@
 @baseColor: #1f1f1f;
 @minorColor: #575859;
 @lineColor: #d5d5d5;
+@treeLine: #979797;
 @active: #409eff;
 @activeColor: #fff;
 .boxSize(@w, @h) { width: @w; height: @h; }
@@ -9,7 +10,12 @@
   line-height: @h;
   height: @h;
 }
-.activeButton {
+.activeButton() {
   background: @active;
   color: @activeColor;
+}
+.aLineWords() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
