@@ -73,7 +73,7 @@ const router = new VueRouter({
         {
           path: 'home',
           component: () => import('@/views/Home'),
-          redirect: '/home/smallSnake',
+          redirect: '/home/originalTable',
           name: 'Home',
           meta: {
             title: 'home',

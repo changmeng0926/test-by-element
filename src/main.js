@@ -1,10 +1,12 @@
 import Vue from 'vue'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import BaiduMap from 'vue-baidu-map'
 import App from './App.vue'
 import router from './router'
 import store from './store'
 import '@/assets/css/index.css'
+import '@/assets/less/index.less'
 import '@/assets/iconfont/iconfont.css'
 import '@/assets/iconfont/iconfont.js'
 import glComponent from './components/common/index'
@@ -16,7 +18,9 @@ import '@/utils/filters.js' //  过滤器
 Vue.prototype.$echarts = echarts
 
 Vue.config.productionTip = false
-Vue.use(ElementUI).use(glComponent)
+Vue.use(ElementUI)
+  .use(glComponent)
+  .use(BaiduMap, { ak: '0k6Ti4TCcvghGufaaeLnYeYEIMzqtsD6' })
 
 new Vue({
   router,

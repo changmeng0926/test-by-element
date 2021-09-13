@@ -35,6 +35,6 @@ export default {
 /deep/.title {
   line-height: 48px;
   font-size: 16px;
-  color: #1f1f1f;
+  color: @baseColor;
 }
 </style>

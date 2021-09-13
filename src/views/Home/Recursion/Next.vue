@@ -95,6 +95,6 @@ export default {
   cursor: pointer;
 }
 .item.active {
-  color: deepskyblue;
+  color: @active;
 }
 </style>

@@ -300,6 +300,7 @@ export default {
       this.status = 3
       this.speed = 200
       this.unit = 1
+      this.score = 0
     },
     // Random color
     randomColor () {
@@ -336,7 +337,7 @@ export default {
 .vertical-line,
 .across-line {
   position: absolute;
-  background: #d5d5d5;
+  background: @lineColor;
 }
 .vertical-line {
   height: 100%;

@@ -107,8 +107,8 @@ export default {
   /deep/table {
     width: 100%;
     border-spacing: 0;
-    border-bottom: 1px solid #d5d5d5;
-    border-right: 1px solid #d5d5d5;
+    border-bottom: 1px solid @lineColor;
+    border-right: 1px solid @lineColor;
     thead {
       background: #eee;
     }
@@ -118,8 +118,8 @@ export default {
     td {
       // line-height: 32px;
       text-align: center;
-      border-top: 1px solid #d5d5d5;
-      border-left: 1px solid #d5d5d5;
+      border-top: 1px solid @lineColor;
+      border-left: 1px solid @lineColor;
     }
     th {
       line-height: 32px;
@@ -136,6 +136,6 @@ export default {
 }
 /deep/.user-item {
   line-height: 18px;
-  color: #575859;
+  color: @minorColor;
 }
 </style>
