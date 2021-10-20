@@ -53,6 +53,11 @@
           <span slot="title">日历</span>
         </el-menu-item>
 
+        <el-menu-item index="/home/TestSwiper">
+          <i class="iconfont icon-swiper"></i>
+          <span slot="title">swiper</span>
+        </el-menu-item>
+
         <el-menu-item index="/home/virtualList">
           <i class="iconfont icon-biaodanliebiao"></i>
           <span slot="title">虚拟列表</span>

@@ -1,9 +1,9 @@
 @font-face {
   font-family: "iconfont"; /* Project id 1523948 */
-  src: url('iconfont.woff2?t=1629884151183') format('woff2'),
-       url('iconfont.woff?t=1629884151183') format('woff'),
-       url('iconfont.ttf?t=1629884151183') format('truetype'),
-       url('iconfont.svg?t=1629884151183#iconfont') format('svg');
+  src: url('iconfont.woff2?t=1632292068846') format('woff2'),
+       url('iconfont.woff?t=1632292068846') format('woff'),
+       url('iconfont.ttf?t=1632292068846') format('truetype'),
+       url('iconfont.svg?t=1632292068846#iconfont') format('svg');
 }
 
 .iconfont {
@@ -12,6 +12,10 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-swiper:before {
+  content: "\e69a";
 }
 
 .icon-xiajiantou:before {

@@ -122,6 +122,16 @@ const router = new VueRouter({
               },
             },
             {
+              path: 'testSwiper',
+              component: () => import('@/views/Home/TestSwiper'),
+              name: 'TestSwiper',
+              meta: {
+                title: 'testSwiper',
+                icon: 'testSwiper',
+                affix: true,
+              },
+            },
+            {
               path: 'virtualList',
               component: () => import('@/views/Home/VirtualList'),
               name: 'VirtualList',
